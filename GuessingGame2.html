@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset ="uft-8">
+		<title>Guessing Game 2</title>
+		<link rel= "stylesheet" type= "text/css"  href = "css/bootstrap.css">
+	</head>
+	<body>
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		 <script src= "js/bootstrap.js"></script>
+		 <div class = "hero-unit">
+		 	<h1> The Guessing Game!</h1>
+		 	<p style = "font-family: cursive"> The best game running! </p>
+		 		<div class='main-box'>
+						 <input type="text" id='playersGuess' placeholder='Input Number 1-100' class='form-control input'  />
+				</div>
+			<h3 id='status'></h3>
+	         <button type='button' id='playersGuess' onclick='doesNumberToGuessExist()' class="btn btn-lg btn-warning">Submit Your Guess</button>
+	         <p></p>
+           <div class='buttons'>
+	           <button type='button'id='playersGuess' onclick='playAgain()' class="btn btn-primary">Play Again</button>
+	           <button type='button' id='playersGuess' onclick='hint()' class= 'btn btn-danger btn-sm'>Give me a Hint</button>
+           </div>
+           <h3 id='guess-count'> 5 Guesses Remaining </h3>
+		 </div>
+	</body>
+</html>

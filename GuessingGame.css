@@ -1,0 +1,31 @@
+
+.myTitle h1 {
+	font-family: Comic;
+	text-align: center;
+	color: #48B893;
+}
+
+.myTitle h2{
+	display:inline;
+	float:center;
+	font-family: cursive;
+	font-size: 10px;
+
+}
+html{
+
+	text-align:center;
+
+}
+
+div button{
+	margin: center;
+}
+
+.backBox div {
+	width:300px;
+	height:75px;
+	border-radius: 5px;
+	background-color:#D1D1D1;
+	margin:auto;
+}
