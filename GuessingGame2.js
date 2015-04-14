@@ -1,6 +1,6 @@
-var random = Math.floor(Math.random() * 100) +1; // generate random number from 1 - 100
-var i = 5; // initial number of guesses
-var answerArr = []; //creates empty array to track player guesses for duplicates
+var random = Math.floor(Math.random() * 100) +1; 
+var i = 5; 
+var answerArr = []; 
 var img = $('#image');
 
 
@@ -11,24 +11,24 @@ $("#submit").on("click", function() {
     userInput = document.getElementById("user-input").value;
     duplicate = (jQuery.inArray(userInput, answerArr)!==-1)
      
-    if (duplicate) { //Checks for duplicate inputs with array created above
+    if (duplicate) { 
         alert("You have already guessed this number. Pick a different number.")
-        i++; //adds guess back for duplicate input
+        i++; 
     };
 
-    if (userInput >= 0 && userInput <= 100 && userInput.length > 0) { //Guess count only reduces with valid guess
+    if (userInput >= 0 && userInput <= 100 && userInput.length > 0) { 
         i--;
-        answerArr.push(userInput); //adds user input to the array to track guesses
-    } else if (userInput.length == 0) { //Alert if empty field is submitted as guess
+        answerArr.push(userInput); 
+    } else if (userInput.length == 0) { 
         alert("Please enter a number from 1-100.");
     } else {
-        alert("Please enter a number from 1-100."); //Alert if input is not number from 0-100
+        alert("Please enter a number from 1-100."); 
     };
 
-    $("#remaining-guesses").children("span").text(i); //Adds text to show number of guesses left
-	$("#guessed").children("span").text(answerArr); //Shows the array of guesses the player already guessed
+    $("#remaining-guesses").children("span").text(i); 
+	$("#guessed").children("span").text(answerArr); 
 
-    if (i <= 0) { //notifies player if there are no more guesses left
+    if (i <= 0) { 
         $("#remaining-guesses").hide();
         $("#over").show();
         answerArr = [];
@@ -38,19 +38,19 @@ $("#submit").on("click", function() {
     if (i>=1){
     $("#over").hide();
     $("#theAnswer").children("span").text(random).hide();
-    //hides the game over and answer while i is greater than 1
+  
     }
 
-    if (userInput === random){ //shows the winning image (doesnt work)
+    if (userInput === random){ 
     	    $("#over").hide();
             img.show();
             $("#remaining-guesses").hide();
 
     }
 
-    $('#user-input').val(''); //empties the input field after each guess
+    $('#user-input').val(''); 
 
-    guesserfunc = function() { //function to determine correct response to a player's guess
+    guesserfunc = function() { 
         diff = userInput - random;
 
         if (diff > 15) {
@@ -76,16 +76,16 @@ $("#submit").on("click", function() {
     };
 
     if (userInput >= 0 && userInput <= 100 && userInput.length > 0 && !duplicate) {
-        $("#guess-result").text(guesserfunc()); // shows whether user's guess was hot or cold given a valid guess
+        $("#guess-result").text(guesserfunc()); 
     } else {
-        $("#guess-result").text(''); //clears prior guess result after an invalid guess
+        $("#guess-result").text(''); 
     }
 
 
 });
 
 $("#reset").on("click",function() {
-    i = 5; //resets the game
+    i = 5; 
     $("#guess-result").text('');
     $("#remaining-guesses").children("span").text(i);
     $("#remaining-guesses").show();
@@ -98,7 +98,7 @@ $("#reset").on("click",function() {
 });
 
 $("#answer").on("click", function() {
-    i = 5; //resets the game and shows the answer and states game over
+    i = 5; 
     $("#guess-result").text('');
     $("#remaining-guesses").children("span").text(i)
     $("#over").show();
