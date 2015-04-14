@@ -5,23 +5,35 @@
 		<title>Guessing Game 2</title>
 		<link rel= "stylesheet" type= "text/css"  href = "css/bootstrap.css">
 	</head>
-	<body>
+	<center><body>
 		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 		 <script src= "js/bootstrap.js"></script>
 		 <div class = "hero-unit">
 		 	<h1> The Guessing Game!</h1>
 		 	<p style = "font-family: cursive"> The best game running! </p>
+		 	<img id = 'image' src=http://www.smiley-faces.org/res/smiley.gif></img>
 		 		<div class='main-box'>
-						 <input type="text" id='playersGuess' placeholder='Input Number 1-100' class='form-control input'  />
+						 <input type="text" id='user-input' placeholder='Input Number 1-100' class='form-control input'  />
 				</div>
 			<h3 id='status'></h3>
-	         <button type='button' id='playersGuess' onclick='doesNumberToGuessExist()' class="btn btn-lg btn-warning">Submit Your Guess</button>
+	         <button type='button' id='submit' class="btn btn-lg btn-warning">Submit Your Guess</button>
 	         <p></p>
            <div class='buttons'>
-	           <button type='button'id='playersGuess' onclick='playAgain()' class="btn btn-primary">Play Again</button>
-	           <button type='button' id='playersGuess' onclick='hint()' class= 'btn btn-danger btn-sm'>Give me a Hint</button>
-           </div>
-           <h3 id='guess-count'> 5 Guesses Remaining </h3>
-		 </div>
-	</body>
+	           <button type='button'id='reset' class="btn btn-primary">Play Again</button>
+	           <button type='button' id='answer' class= 'btn btn-danger btn-sm'>Give me the Answer</button>
+             </div>
+      <div class="results" > 
+        <p id="guess-result"></p> 
+        <p id="remaining-guesses"> You have <span>5</span> more guesses remaining.</p>
+        <p id = "guessed"> You have guessed: <span></span></p>
+        <p id="over"> Game Over!</p><br>
+        <p id="theAnswer">The answer is: <span></span></p>
+      </div>
+    </div>
+		     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		<script src='GuessingGame2.js'></script>
+	</body></center>
 </html>
